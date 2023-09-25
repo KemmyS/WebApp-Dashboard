@@ -1,0 +1,23 @@
+{
+  "name": "webapp-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "sass --watch --no-source-map ./sass/style.scss ./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KemmyS/WebApp-Dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KemmyS/WebApp-Dashboard/issues"
+  },
+  "homepage": "https://github.com/KemmyS/WebApp-Dashboard#readme",
+  "dependencies": {
+    "sass": "^1.68.0"
+  }
+}
