@@ -1,2 +1,18 @@
 @use "../utilities/mixins" as *;
 @use "../utilities/variables" as *;
+
+
+.nav{
+    grid-area: nav;
+    display: flex;
+    padding: 0 20px;
+    background-color: #212950;
+}
+
+.nav-icon,
+.social-svg{
+    margin: 1em auto;
+    width: 10%;
+    fill: white;
+
+}

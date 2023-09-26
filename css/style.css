@@ -24,19 +24,8 @@
   grid-template-areas: "header" "nav" "main-content";
 }
 
-.nav {
-  grid-area: nav;
-}
-
 .main-content {
   grid-area: main-content;
-}
-
-.nav-icon,
-.social-svg {
-  margin: 1em auto;
-  width: 20%;
-  display: block;
 }
 
 .header {
@@ -90,6 +79,20 @@
 
 .profile-name {
   padding: 10px;
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  padding: 0 20px;
+  background-color: #212950;
+}
+
+.nav-icon,
+.social-svg {
+  margin: 1em auto;
+  width: 10%;
+  fill: white;
 }
 
 /*# sourceMappingURL=style.css.map */
