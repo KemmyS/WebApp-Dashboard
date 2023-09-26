@@ -1,0 +1,59 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+
+
+.header{
+    grid-area: header;
+    display: flex;
+    background-color:#506BC4;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    position: relative;
+   
+}
+
+.web{
+    font-weight: 700;
+}
+
+.title{
+    font-size: 20px;
+}
+
+.svg-bell{
+    width: 7%;
+   fill: white;
+   margin: 1em auto;
+}
+
+
+.tm{
+    position: absolute;
+    top: 35%;
+    left: 26%;
+    font-size: 10px;
+}
+
+.notification{
+    background-color:#50C4B0;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    border-radius: 100%;
+}
+
+.vertical-line{
+    border-left: 1px solid #7A8088;
+            height: 40px;
+            position:absolute;
+            top: 20%;
+            left: 47%;
+}
+
+.profile-name{
+    padding: 10px;
+}
+

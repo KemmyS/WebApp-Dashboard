@@ -1,1 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "nav" "main-content";
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.main-content {
+  grid-area: main-content;
+}
+
+.nav-icon,
+.social-svg {
+  margin: 1em auto;
+  width: 20%;
+  display: block;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  background-color: #506BC4;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  position: relative;
+}
+
+.web {
+  font-weight: 700;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.svg-bell {
+  width: 7%;
+  fill: white;
+  margin: 1em auto;
+}
+
+.tm {
+  position: absolute;
+  top: 35%;
+  left: 26%;
+  font-size: 10px;
+}
+
+.notification {
+  background-color: #50C4B0;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  border-radius: 100%;
+}
+
+.vertical-line {
+  border-left: 1px solid #7A8088;
+  height: 40px;
+  position: absolute;
+  top: 20%;
+  left: 47%;
+}
+
+.profile-name {
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
