@@ -1,2 +1,8 @@
 @use "../utilities/mixins" as *;
 @use "../utilities/variables" as *;
+
+h3{
+padding: 5px;
+text-transform:uppercase;
+}
+

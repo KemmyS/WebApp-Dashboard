@@ -1,2 +1,94 @@
 @use "../utilities/mixins" as *;
 @use "../utilities/variables" as *;
+
+
+.main-content{
+    grid-area:main-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "dash-board-section"
+    "traffic-board"
+    "bar-widget"
+    "doughnut-widget"
+    "social-container"
+    "new-members"
+    "recent-activity"
+    "message-user"
+    "settings"
+   
+}
+
+.dash-board-section{
+    grid-area:dash-board-section;
+
+    .dash-board{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-heading{
+            width:max-content;
+            text-align: center;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        &-tab{
+            width: 195px;
+            height: 50px;
+            margin-bottom: 10px;
+            background-color: #9db4d832;
+           border-left: 1px solid #7a808860;
+           border-bottom: 1px solid #7a808860;
+           border-radius: 2px;
+            padding: 10px;
+        }
+
+    }
+
+    .alert{
+        width: 280px;
+        height: 30px;
+        border-radius: 5px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color:#506BC4;
+        text-align: center;
+        color: white;
+    }
+}
+
+.traffic-board{
+    grid-area:traffic-board;
+    width: max-content;
+}
+.traffic-heading{}
+
+.traffic-list{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+}
+
+.full-widget-container{
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+   
+}
+
+#line-chart{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+
+
+

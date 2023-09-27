@@ -9,10 +9,8 @@
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"
-        integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="/js/script.js"></script>
 </head>
 
 <body class="grid-container">
@@ -30,7 +28,7 @@
             <img src="/images/profile-image.jpg" alt="profile-picture"
             class="profile-img">
         </div>
-        <h3 class="profile-name">Octuber Sahn</h3>
+        <h4 class="profile-name">Octuber Sahn</h4>
 
     </header>
 
@@ -75,11 +73,11 @@
         <section class="dash-board-section">
 
             <div class="dash-board">
-                <h2 class="board-heading">Dashboard</h2>
-                <div class="board-tab"></div>
+                <h2 class="dash-board-heading">Dashboard</h2>
+                <div class="dash-board-tab"></div>
             </div>
 
-            <div class="alert" id="alert"></div>
+            <div class="alert" id="alert">JS will insert alert here</div>
 
         </section>
 
@@ -96,7 +94,7 @@
             </div>
 
             <div class="full-widget-container">
-                <canvas id="traffic-chart"></canvas>
+                <canvas id="line-chart"></canvas>
             </div>
 
         </section>
