@@ -4,15 +4,23 @@
 
 .nav{
     grid-area: nav;
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
     display: flex;
-    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
     background-color: #212950;
+    // border: 1px solid red;
 }
 
 .nav-icon,
 .social-svg{
-    margin: 1em auto;
-    width: 10%;
+    width: 40px;
+    height: 40px;
     fill: white;
+    padding: 5px;
 
 }

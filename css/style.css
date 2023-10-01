@@ -1,6 +1,9 @@
 h3 {
-  padding: 5px;
+  margin-bottom: 10px;
   text-transform: uppercase;
+  width: max-content;
+  text-align: center;
+  font-weight: 600;
 }
 
 *,
@@ -20,23 +23,24 @@ h3 {
   height: 40px;
   border-radius: 100%;
   object-fit: cover;
-  margin: 0 auto;
 }
 
 .main-content {
   grid-area: main-content;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-areas: "dash-board-section" "traffic-board" "bar-widget" "doughnut-widget" "social-container" "new-members" "recent-activity" "message-user" "settings";
 }
 
 .dash-board-section {
   grid-area: dash-board-section;
+  width: max-content;
 }
 .dash-board-section .dash-board {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .dash-board-section .dash-board-heading {
   width: max-content;
@@ -46,21 +50,21 @@ h3 {
   font-size: 18px;
 }
 .dash-board-section .dash-board-tab {
-  width: 195px;
+  width: 215px;
   height: 50px;
   margin-bottom: 10px;
-  background-color: rgba(157, 180, 216, 0.1960784314);
+  background-color: rgba(136, 167, 217, 0.3019607843);
   border-left: 1px solid rgba(122, 128, 136, 0.3764705882);
   border-bottom: 1px solid rgba(122, 128, 136, 0.3764705882);
   border-radius: 2px;
   padding: 10px;
 }
 .dash-board-section .alert {
-  width: 280px;
+  width: 260px;
   height: 30px;
   border-radius: 5px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 5px;
   background-color: #506BC4;
   text-align: center;
   color: white;
@@ -69,42 +73,47 @@ h3 {
 .traffic-board {
   grid-area: traffic-board;
   width: max-content;
+  padding: 20px;
 }
-
-.traffic-list {
+.traffic-board .traffic-heading {
+  width: max-content;
+  padding: 10px;
+}
+.traffic-board .traffic-heading .traffic-list {
   display: flex;
   list-style: none;
-  justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
-
-.full-widget-container {
-  width: 350px;
-  height: 350px;
-  margin: 0 auto;
+.traffic-board .full-widget-container {
+  width: 100%;
+  height: 100%;
 }
-
-#line-chart {
+.traffic-board .full-widget-container #line-chart {
   max-width: 100%;
   max-height: 100%;
 }
 
 .grid-container {
-  width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-areas: "header" "nav" "main-content";
 }
 
 .header {
   grid-area: header;
   display: flex;
-  background-color: #506BC4;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
+  background-color: #506BC4;
   color: white;
   position: relative;
+  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
+  gap: 15px;
+  padding: 2px 10px;
+  margin: 0 auto;
 }
 
 .web {
@@ -134,7 +143,7 @@ h3 {
   height: 5px;
   position: absolute;
   top: 30%;
-  left: 40%;
+  left: 43%;
   border-radius: 100%;
 }
 
@@ -146,23 +155,23 @@ h3 {
   left: 47%;
 }
 
-.profile-name {
-  padding: 10px;
-  margin-right: 20px;
-}
-
 .nav {
   grid-area: nav;
+  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
   display: flex;
-  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
   background-color: #212950;
 }
 
 .nav-icon,
 .social-svg {
-  margin: 1em auto;
-  width: 10%;
+  width: 40px;
+  height: 40px;
   fill: white;
+  padding: 5px;
 }
-
-/*# sourceMappingURL=style.css.map */

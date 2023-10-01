@@ -5,7 +5,8 @@
 .main-content{
     grid-area:main-content;
     display: grid;
-    grid-template-columns: 1fr;
+    // grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-areas: 
     "dash-board-section"
     "traffic-board"
@@ -21,11 +22,13 @@
 
 .dash-board-section{
     grid-area:dash-board-section;
+    width: max-content;
 
     .dash-board{
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
 
         &-heading{
             width:max-content;
@@ -36,10 +39,10 @@
         }
 
         &-tab{
-            width: 195px;
+            width: 215px;
             height: 50px;
             margin-bottom: 10px;
-            background-color: #9db4d832;
+            background-color: #88a7d94d;
            border-left: 1px solid #7a808860;
            border-bottom: 1px solid #7a808860;
            border-radius: 2px;
@@ -49,11 +52,11 @@
     }
 
     .alert{
-        width: 280px;
+        width: 260px;
         height: 30px;
         border-radius: 5px;
         margin: 0 auto;
-        padding: 10px;
+        padding: 5px;
         background-color:#506BC4;
         text-align: center;
         color: white;
@@ -63,27 +66,40 @@
 .traffic-board{
     grid-area:traffic-board;
     width: max-content;
-}
-.traffic-heading{}
+    padding: 20px;
 
-.traffic-list{
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    gap: 20px;
+    .traffic-heading{
+        width: max-content;
+        padding: 10px;
+
+    
+        .traffic-list{
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+    }
+
+    
+
+    .full-widget-container{
+        width: 100%;
+        height: 100%;
+
+        #line-chart{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
 }
 
-.full-widget-container{
-    width: 350px;
-    height: 350px;
-    margin: 0 auto;
-   
-}
 
-#line-chart{
-    max-width: 100%;
-    max-height: 100%;
-}
+
+
+
+
+
 
 
 

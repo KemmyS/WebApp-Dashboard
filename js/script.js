@@ -31,6 +31,12 @@ const hourly = new Chart(lineChart,{
               
                 
             }
+
+        },
+        plugins:{
+            legend:{
+                display:false
+            }
         }
     }
 });
