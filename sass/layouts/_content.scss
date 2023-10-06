@@ -165,6 +165,154 @@
 }
 
 
+.new-members{
+margin: 1em auto;
+text-align: center;
+line-height: 1.2;
+
+.members-profile{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+}
+
+
+.recent-activity{
+margin: 1em auto;
+text-align: center;
+line-height: 1.2;
+padding: 15px;
+
+.members-profile{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+
+}
+
+
+.message-user{
+    padding: 15px;
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    
+    input{
+       width: 280px;
+       padding: 5px;
+       border-radius: 5px;
+       border: 1px solid gray;
+    }
+
+    textarea{
+       width: 280px;
+       height: 150px;
+       padding: 5px;
+       border-radius: 5px;
+       border: 1px solid gray;
+    }
+
+    .button{
+        width: 280px;
+        height: 40px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        background-color: #506BC4;
+        color:white;
+     }
+
+}
+}
+
+
+.settings{
+    padding: 15px;
+    width: 100%;
+
+    .notifications{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+       
+    }
+
+    .settings-notifications{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .setting-btns{
+        width: 100px;
+        height: 30px;
+        border-radius: 50px;
+        border: 1px solid gray;
+        background-color: #506BC4;
+        text-align: start;
+        padding: 5px 10px;
+        color: #FFF;
+        position: relative;
+        align-self: center;
+}
+
+    .public-btn{
+        margin-left: 25px;
+    }
+
+
+    .white-circle{
+        background-color: white;
+        border: 1px solid gray;
+        width: 15px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        padding: 10px;
+    }
+
+
+    .form-field{
+        width: 280px;
+        height: 40px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.375);
+        background-color: #b9bdcb75;
+        margin-top: 20px;
+
+    }
+
+        .control-button{
+            width: 130px;
+            height: 40px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            background-color: #506BC4;
+            color:white;
+            margin: 1em auto;
+        }
+
+        .cancel-button{
+            margin-left: 10px;
+            background-color: gray;
+        }
+    
+
+}
+
 
 
 
