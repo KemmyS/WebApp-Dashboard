@@ -71,14 +71,23 @@ a {
   padding: 10px;
 }
 .dash-board-section .alert {
-  width: 260px;
-  height: 30px;
+  width: 280px;
+  height: 35px;
   border-radius: 5px;
   margin: 0 auto;
-  padding: 5px;
+  padding: 10px;
   background-color: #506BC4;
-  text-align: center;
   color: white;
+  position: relative;
+}
+.dash-board-section .alert .x-icon {
+  font-size: 12px;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+}
+.dash-board-section .alert #message2 {
+  display: none;
 }
 
 .traffic-board {
@@ -278,6 +287,86 @@ a {
 .settings .cancel-button {
   margin-left: 10px;
   background-color: gray;
+}
+
+.modal {
+  display: none;
+  text-align: center;
+  z-index: 10;
+  padding: 10px;
+  position: fixed;
+  background-color: #D7D8D0;
+}
+
+.first-notification {
+  width: 250px;
+  top: 112px;
+  right: 50px;
+}
+.first-notification .green-dot {
+  background-color: #50C4B0;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  border-radius: 100%;
+}
+.first-notification .close-tab {
+  font-size: 12px;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+}
+
+.second-notification {
+  width: 250px;
+  top: 153px;
+  right: 50px;
+}
+.second-notification .green-dot {
+  background-color: #50C4B0;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  border-radius: 100%;
+}
+.second-notification .close-tab {
+  font-size: 12px;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+}
+
+.third-notification {
+  width: 280px;
+  top: 195px;
+  right: 40px;
+}
+.third-notification .green-dot {
+  background-color: #50C4B0;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  border-radius: 100%;
+}
+.third-notification .close-tab {
+  font-size: 12px;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .grid-container {
