@@ -3,10 +3,7 @@
 
 .grid-container{
     min-height: 100vh;
-    display: grid;
-    // background-color: rgba(0, 128, 0, 0.334);
-    // grid-template-columns: 1fr;
-    grid-template-columns: 100%;
+    @include grid-layout;
     grid-template-areas: 
     "header"
     "nav"

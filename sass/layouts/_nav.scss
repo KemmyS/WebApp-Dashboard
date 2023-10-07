@@ -4,16 +4,14 @@
 
 .nav{
     grid-area: nav;
-    max-width: 100%;
+    @include max-width;
     width: 100%;
-    max-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     padding: 5px;
     background-color: #212950;
-    // border: 1px solid red;
 }
 
 .nav-icon,

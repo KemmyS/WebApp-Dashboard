@@ -4,9 +4,7 @@
 
 .main-content{
     grid-area:main-content;
-    display: grid;
-    // grid-template-columns: 1fr;
-    grid-template-columns: 100%;
+    @include grid-layout;
     grid-template-areas: 
     "dash-board-section"
     "traffic-board"
@@ -25,9 +23,8 @@
     width: max-content;
 
     .dash-board{
-        display: flex;
+        @include flex-align;
         justify-content: center;
-        align-items: center;
         width: 100%;
 
         &-heading{
@@ -52,33 +49,45 @@
     }
 
     .alert{
-        width: 280px;
-        height: 35px;
-        border-radius: 5px;
-        margin: 0 auto;
-        padding: 10px;
-        background-color:#506BC4;
-        color: white;
-        position: relative;
 
-        .x-icon{
-           font-size: 12px;
-            position: absolute;
-            top: 30%;
-            right: 5%;
-            
-        }
+        width: 300px;
+        height: 35px;
+        border-radius: 1px;
+        margin: 0 auto;
+        margin-left: 10px;
+        padding: 5px;
+        background-color:$primaryColor;
+        color:$secondaryColor;
+        position: relative;
+        @include box-shadow;
+       
+
 
         #message2{
             display: none;
         }
+
+        .x-icon{
+           font-size: 12px;
+            position: absolute;
+            top: 10%;
+            right: 3%;
+            
+        }
+
+        .x-icon:hover{
+            @include tab-close;
+        }
+
+        
     }
 }
+
 
 .traffic-board{
     grid-area:traffic-board;
     width: max-content;
-    padding: 20px;
+    margin: 0 auto;
 
     .traffic-heading{
         width: max-content;
@@ -87,9 +96,6 @@
     
         .traffic-list{
             max-width: 400px;
-            // display: flex;
-            // list-style: none;
-            // gap: 25px;
         }
         .traffic-list ul{
             display: flex;
@@ -99,25 +105,13 @@
             list-style: none;
         }
 
-        .list-btn{
-            border-radius: 20px;
-            text-decoration: none;
-            padding: 5px 10px;
-            margin-right: 5px;
-            background-color: #50C4B0;
-        }
-
     }
 
-    
-
     .full-widget-container{
-        width: 100%;
-        height: 100%;
+       @include percent-width;
 
         #line-chart{
-            max-width: 100%;
-            max-height: 100%;
+            @include max-width;
         }
     }
 
@@ -129,12 +123,10 @@
 
 
  .bar-widget{
-    width: 100%;
-    height: 100%;
+    @include percent-width;
     
     #daily-chart{
-        max-width: 100%;
-        max-height: 100%;
+      @include max-width;
     }
 }
 }
@@ -157,20 +149,20 @@
    padding: 15px;
 
     .social-divs{
-        display: flex;
+        @include flex-align;
         justify-content: space-evenly;
-        align-items: center;
-        border: 1px solid #6a696995;
+        border: none;
         width: 250px;
         margin: 0 auto;
         padding: 10px;
-        border-radius:5px;
+        border-radius:1px;
         background-color: #adbdf057;
+        box-shadow: 5px 5px 10px;
 
         .social-svg{
             width: 50px;
             height: 50px;
-        background-color: #506BC4;
+        background-color:$primaryColor;
            border-radius:100% ;
            padding: 12px;
 
@@ -225,39 +217,7 @@ padding: 15px;
 .message-user{
     padding: 15px;
 
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
 
-    
-    input{
-       width: 280px;
-       padding: 5px;
-       border-radius: 5px;
-       border: 1px solid gray;
-    }
-
-    textarea{
-       width: 280px;
-       height: 150px;
-       padding: 5px;
-       border-radius: 5px;
-       border: 1px solid gray;
-    }
-
-    .button{
-        width: 280px;
-        height: 40px;
-        padding: 5px;
-        border-radius: 5px;
-        border: 1px solid gray;
-        background-color: #506BC4;
-        color:white;
-     }
-
-}
 }
 
 
@@ -266,42 +226,22 @@ form{
     width: 100%;
 
     .notifications{
-        display: flex;
+        @include flex-align;
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
+        gap: 5px;
+        width: max-content;
        
     }
 
     .settings-notifications{
-        display: flex;
+        @include flex-align;
         gap: 15px;
-        align-items: center;
         padding: 5px;
     }
 
-    .setting-btns{
-        width: 100px;
-        height: 30px;
-        border-radius: 50px;
-        border: 1px solid gray;
-        background-color: #506BC4;
-        text-align: start;
-        padding: 5px 10px;
-        color: #FFF;
-        position: relative;
-        align-self: center;
-}
-
-    .public-btn{
-        margin-left: 25px;
-    }
-
-
     .white-circle{
-        background-color: white;
-        border: 1px solid gray;
+        background-color:$secondaryColor;
+        border: 1px solid $neutralColor;
         width: 15px;
         height: 20px;
         border-radius: 50%;
@@ -311,8 +251,13 @@ form{
         padding: 10px;
     }
 
+    .white-circle:hover{
+        cursor: pointer;
+        @include box-shadow;
+        background-color:#50C4B0 ;
+    }
 
-    .form-field{
+    .time-select{
         width: 280px;
         height: 40px;
         padding: 5px;
@@ -323,26 +268,7 @@ form{
 
     }
 
-        .control-button{
-            width: 130px;
-            height: 40px;
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid gray;
-            background-color: #506BC4;
-            color:white;
-            margin: 1em auto;
-        }
-
-        .cancel-button{
-            margin-left: 10px;
-            background-color: gray;
-        }
-    
-
 }
-
-
 
 .modal{
     display: none;
@@ -351,16 +277,18 @@ form{
 padding: 10px;
 position: fixed;
 background-color:#D7D8D0;
+};
+
+.close-tab{
+    font-size: 12px;
+    position: absolute;
+    top: 30%;
+    right: 5%;
 }
 
-
-.first-notification{
-  width: 250px;
-top: 112px;
-right: 50px;
-
-
-
+.close-tab:hover{
+    @include tab-close;
+}
 
 .green-dot{
     background-color:#50C4B0;
@@ -372,17 +300,12 @@ right: 50px;
     border-radius: 100%;
 }
 
-.close-tab{
-    font-size: 12px;
-    position: absolute;
-    top: 30%;
-    right: 5%;
-}
-
+.first-notification{
+  width: 250px;
+top: 112px;
+right: 50px;
 
 }
-
-
 .second-notification{
   width: 250px;
 top: 153px;
@@ -409,38 +332,16 @@ right: 50px;
 }
 }
 
-
 .third-notification{
   width: 280px;
 top: 195px;
-right: 40px;
-
-
-
-
-.green-dot{
-    background-color:#50C4B0;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 40%;
-    left: 5%;
-    border-radius: 100%;
+right: 30px;
 }
-
-.close-tab{
-    font-size: 12px;
-    position: absolute;
-    top: 30%;
-    right: 5%;
-}
-}
-
-
 
 .show{
     display: block;
 }
+
 .hide{
     display: none;
 }

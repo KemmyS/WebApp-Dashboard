@@ -1,2 +1,74 @@
 @use "../utilities/mixins" as *;
 @use "../utilities/variables" as *;
+
+.list-btn{
+            
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: black;
+
+    
+}
+
+.list-btn:hover{
+    border-radius: 20px;
+    background-color: #50C4B0;
+    color:$secondaryColor;
+}
+
+.toggle-btn{
+    width: 80px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid $neutralColor;
+    background-color:$primaryColor;
+    text-align: start;
+    padding: 5px 10px;
+    color: $secondaryColor;
+    position: relative;
+    align-self: center;
+}
+
+
+.public-btn{
+    margin-left: 25px;
+}
+
+.form-button{
+    width: 280px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $neutralColor;
+    background-color:$primaryColor;
+    color:$secondaryColor;
+ }
+
+ .form-button:hover{
+   @include box-shadow;
+   background-color:#50C4B0 ;
+ }
+
+
+ .setting-button{
+    width: 130px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $neutralColor;
+    background-color: $primaryColor;
+    color:$secondaryColor;
+    margin: 1em auto;
+}
+
+.setting-button:hover{
+    @include box-shadow;
+    background-color:#50C4B0 ;
+}
+
+.cancel-button{
+    margin-left: 10px;
+    background-color: $neutralColor;
+}
+

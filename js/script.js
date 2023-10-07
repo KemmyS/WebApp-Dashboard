@@ -23,7 +23,7 @@ const trafficLineChart = new Chart(lineChart, {
   data: {
     datasets: [
       {
-        label: "none",
+        label: "Traffic data",
         data: [
           { x: "10am", y: 25 },
           { x: "11am", y: 30 },
@@ -121,7 +121,7 @@ const dailyBarChart = new Chart(barChart, {
   data: {
     datasets: [
       {
-        label: "none",
+        label: "Daily Traffic",
         data: [
           { x: "Sun", y: 55 },
           { x: "Mon", y: 105 },
@@ -181,6 +181,8 @@ const dailyDoughnutChart = new Chart(doughnutChart, {
         align: 'center',
       },
     },
+
+    
   },
 
   plugins: [

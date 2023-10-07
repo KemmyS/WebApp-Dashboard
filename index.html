@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebApp Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -110,12 +112,14 @@
 
         </section>
 
+
+
         <section class="traffic-board">
 
-            <div class="traffic-heading">
+        <div class="traffic-heading">
                 <h3>Traffic</h3>
 
-                <div  class="traffic-list">
+         <div  class="traffic-list">
                 <ul>
                     <li><a href="#" class="list-btn hourly-btn">Hourly</a></li>
                     <li><a href="#" class="list-btn daily-btn">Daily</a></li>
@@ -341,7 +345,7 @@
 
                 <textarea placeholder="Message for user" class="message-area" id="messageField"></textarea>
 
-                <button class="button" id="button">Send</button>
+                <button class="form-button" id="button">Send</button>
 
             </form>
         </section>
@@ -354,7 +358,7 @@
                 <div class="email-notification">
                     <div class="settings-notifications">
                        <span class="notify-text"> Send Email notifications</span>
-                        <button class="setting-btns">
+                        <button class="toggle-btn">
                             <span class="white-circle"></span>
                             
                             On</button>
@@ -366,7 +370,7 @@
                 <div class="public-notification">
                     <div class="settings-notifications">
                        <span class="notify-text"> Set Profile to Public</span>
-                        <button class="setting-btns public-btn"><span class="white-circle"></span>
+                        <button class="toggle-btn public-btn"><span class="white-circle"></span>
                             On</button>
 
                     </div>
@@ -376,7 +380,7 @@
 
             </div>
 
-            <select class="form-field" id="timezone">
+            <select class="time-select" id="timezone">
                 <option disabled selected>Select a Timezone</option>
                 <option>Eastern</option>
                 <option>Central</option>
@@ -389,8 +393,8 @@
             </select>
 
             <div class="settings-btns">
-                <button class="control-button save-button" id="save">Save</button>
-                <button class=" control-button cancel-button" id="cancel">Cancel</button>
+                <button class="setting-button save-button" id="save">Save</button>
+                <button class=" setting-button cancel-button" id="cancel">Cancel</button>
             </div>
 
         </section>

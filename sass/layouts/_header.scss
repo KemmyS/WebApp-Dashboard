@@ -10,13 +10,11 @@
     background-color:#506BC4;
     color: white;
     position: relative;
-    max-width: 100%;
+    @include max-width;
     width: 100%;
-    max-height: 100%;
     gap: 15px;
     padding: 2px 10px;
     margin: 0 auto;
-    // border: 1px solid black;
    
 }
 
@@ -26,7 +24,6 @@
 
 .title{
     font-size: 20px;
-    // padding: 5px;
 }
 
 .svg-bell{
@@ -39,7 +36,7 @@
 .tm{
     position: absolute;
     top: 35%;
-    left: 26%;
+    left: 28%;
     font-size: 10px;
 }
 
@@ -49,7 +46,7 @@
     height: 5px;
     position: absolute;
     top: 30%;
-    left: 43%;
+    left: 40%;
     border-radius: 100%;
 }
 
@@ -58,9 +55,5 @@
             height: 40px;
             position:absolute;
             top: 20%;
-            left: 47%;
+            left: 45%;
 }
-.profile-name{
-    // padding: 5px;
-}
-

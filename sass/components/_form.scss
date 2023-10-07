@@ -1,2 +1,27 @@
 @use "../utilities/mixins" as *;
 @use "../utilities/variables" as *;
+
+form{
+    @include flex-align;
+    flex-direction: column;
+    gap: 15px;
+
+    
+    input{
+       width: 280px;
+       padding: 5px;
+       border-radius: 5px;
+      @include box-shadow;
+    }
+
+    textarea{
+       width: 280px;
+       height: 150px;
+       padding: 5px;
+       border-radius: 2px;
+       @include box-shadow;
+    }
+
+   
+
+}
