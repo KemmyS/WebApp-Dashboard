@@ -86,10 +86,27 @@
 
     
         .traffic-list{
-            display: flex;
-            list-style: none;
-            gap: 25px;
+            max-width: 400px;
+            // display: flex;
+            // list-style: none;
+            // gap: 25px;
         }
+        .traffic-list ul{
+            display: flex;
+        }
+
+        .traffic-list ul li{
+            list-style: none;
+        }
+
+        .list-btn{
+            border-radius: 20px;
+            text-decoration: none;
+            padding: 5px 10px;
+            margin-right: 5px;
+            background-color: #50C4B0;
+        }
+
     }
 
     

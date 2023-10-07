@@ -12,7 +12,13 @@ const modal1 = document.querySelector(".first-notification");
 const modal2 = document.querySelector(".second-notification");
 const modal3 = document.querySelector(".third-notification");
 
-const hourly = new Chart(lineChart, {
+
+const hourlyBtn = document.querySelector(".hourly-btn");
+const dailyBtn = document.querySelector(".daily-btn");
+const weeklyBtn = document.querySelector(".weekly-btn");
+const monthlyBtn = document.querySelector(".monthly-btn");
+
+const trafficLineChart = new Chart(lineChart, {
   type: "line",
   data: {
     datasets: [
@@ -49,45 +55,68 @@ const hourly = new Chart(lineChart, {
     },
   },
 });
-// const daily = new Chart(lineChart, {
-//   type: "line",
-//   data: {
-//     datasets: [
-//       {
-//         label: "none",
-//         data: [
-//           { x: "10am", y: 25 },
-//           { x: "11am", y: 30 },
-//           { x: "12pm", y: 15 },
-//           { x: "1pm", y: 35 },
-//           { x: "2pm", y: 20 },
-//           { x: "3pm", y: 45 },
-//           { x: "4pm", y: 20 },
-//           { x: "5pm", y: 15 },
-//           { x: "6pm", y: 35 },
-//           { x: "7pm", y: 15 },
-//           { x: "8pm", y: 20 },
-//         ],
-//         // backgroundColor:[''],
-//         borderWidth: 1,
-//       },
-//     ],
-//   },
-//   options: {
-//     scales: {
-//       y: {
-//         beginAtZero: true,
-//       },
-//     },
-//     plugins: {
-//       legend: {
-//         display: false,
-//       },
-//     },
-//   },
-// });
 
-const dailyChart = new Chart(barChart, {
+
+function changeChart(data){
+    trafficLineChart.data.datasets[0].data = data;
+    trafficLineChart.update()
+}
+
+hourlyBtn.addEventListener("click", (e) => {
+    changeChart([
+        { x: "10am", y: 25 },
+        { x: "11am", y: 30 },
+        { x: "12pm", y: 15 },
+        { x: "1pm", y: 35 },
+        { x: "2pm", y: 20 },
+        { x: "3pm", y: 45 },
+        { x: "4pm", y: 20 },
+        { x: "5pm", y: 15 },
+        { x: "6pm", y: 35 },
+        { x: "7pm", y: 15 },
+        { x: "8pm", y: 20 },
+      ]);
+  });
+
+dailyBtn.addEventListener("click", (e) => {
+    changeChart([
+        { x: "Fri", y: 300 },
+        { x: "Sat", y: 150 },
+        { x: "Sun", y: 180 },
+        { x: "Mon", y: 450 },
+        { x: "Tue", y: 300 },
+        { x: "Wed", y: 250 },
+        { x: "Thu", y: 400 },
+      ]);
+  });
+
+
+weeklyBtn.addEventListener("click", (e) => {
+    changeChart([
+        { x: "16-22", y: 500 },
+        { x: "23-29", y: 1000 },
+        { x: "30-5", y: 550 },
+        { x: "6-12", y: 1200 },
+        { x: "13-19", y: 1600 },
+        { x: "20-26", y: 1200 },
+        { x: "27-3", y: 1000 },
+      ]);
+  });
+
+monthlyBtn.addEventListener("click", (e) => {
+    changeChart([
+        { x: "Jan", y: 65 },
+        { x: "Feb", y: 55 },
+        { x: "Mar", y: 80 },
+        { x: "Apr", y: 83 },
+        { x: "May", y: 57 },
+        { x: "Jun", y: 55 },
+        { x: "July", y: 40 },
+      ]);
+  });
+
+
+const dailyBarChart = new Chart(barChart, {
   type: "bar",
   data: {
     datasets: [
@@ -121,7 +150,7 @@ const dailyChart = new Chart(barChart, {
   },
 });
 
-const dailyUser = new Chart(doughnutChart, {
+const dailyDoughnutChart = new Chart(doughnutChart, {
   type: "doughnut",
   data: {
     labels: ["Desktop", "Tablet", "phones"],

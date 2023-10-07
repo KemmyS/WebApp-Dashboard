@@ -100,9 +100,20 @@ a {
   padding: 10px;
 }
 .traffic-board .traffic-heading .traffic-list {
+  max-width: 400px;
+}
+.traffic-board .traffic-heading .traffic-list ul {
   display: flex;
+}
+.traffic-board .traffic-heading .traffic-list ul li {
   list-style: none;
-  gap: 25px;
+}
+.traffic-board .traffic-heading .list-btn {
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #50C4B0;
 }
 .traffic-board .full-widget-container {
   width: 100%;
