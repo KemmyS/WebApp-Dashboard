@@ -32,7 +32,7 @@
 
 
 .public-btn{
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 .form-button{
@@ -43,6 +43,7 @@
     border: 1px solid $neutralColor;
     background-color:$primaryColor;
     color:$secondaryColor;
+    overflow: hidden;
  }
 
  .form-button:hover{
@@ -72,3 +73,19 @@
     background-color: $neutralColor;
 }
 
+
+
+@media (min-width: 768px){
+    .form-button{
+        width: 650px;
+    }
+
+    .setting-button{
+        width: 320px;
+       
+    }
+
+    .cancel-button{
+        margin-left: 25px;
+    }
+}

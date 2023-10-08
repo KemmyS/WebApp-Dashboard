@@ -1,8 +1,7 @@
-@use "../utilities/mixins" as *;
-@use "../utilities/variables" as *;
+@use "../utilities/mixins"as *;
+@use "../utilities/variables"as *;
 
-
-.nav{
+.nav {
     grid-area: nav;
     @include max-width;
     width: 100%;
@@ -12,13 +11,33 @@
     gap: 15px;
     padding: 5px;
     background-color: #212950;
+    margin-right: 5%;
 }
 
 .nav-icon,
-.social-svg{
+.social-svg {
     width: 40px;
     height: 40px;
     fill: white;
     padding: 5px;
+
+}
+
+@media (min-width: 768px) {
+    .nav {
+        height: 100%;
+        flex-direction: column;
+        align-items: start;
+        justify-content: flex-start;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        gap: 2px;
+    }
+
+    .nav-icon {
+        margin-top: 15px;
+        padding: 7px;
+    
+    }
 
 }

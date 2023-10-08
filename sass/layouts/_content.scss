@@ -1,54 +1,53 @@
-@use "../utilities/mixins" as *;
-@use "../utilities/variables" as *;
+@use "../utilities/mixins"as *;
+@use "../utilities/variables"as *;
 
 
-.main-content{
-    grid-area:main-content;
+.main-content {
+    grid-area: main-content;
     @include grid-layout;
-    grid-template-areas: 
-    "dash-board-section"
-    "traffic-board"
-    "bar-widget"
-    "doughnut-widget"
-    "social-container"
-    "new-members"
-    "recent-activity"
-    "message-user"
-    "settings"
-   
+    grid-template-areas:
+        "dash-board-section"
+        "traffic-board"
+        "bar-widget"
+        "doughnut-widget"
+        "social-container"
+        "new-members"
+        "recent-activity"
+        "message-user"
+        "settings"
 }
 
-.dash-board-section{
-    grid-area:dash-board-section;
+.dash-board-section {
+    grid-area: dash-board-section;
     width: max-content;
 
-    .dash-board{
+    .dash-board {
         @include flex-align;
         justify-content: center;
         width: 100%;
 
-        &-heading{
-            width:max-content;
+        &-heading {
+            width: max-content;
             text-align: center;
             padding: 10px;
             font-weight: 600;
             font-size: 18px;
         }
 
-        &-tab{
-            width: 215px;
+        &-tab {
+            width: 212px;
             height: 50px;
             margin-bottom: 10px;
             background-color: #88a7d94d;
-           border-left: 1px solid #7a808860;
-           border-bottom: 1px solid #7a808860;
-           border-radius: 2px;
+            border-left: 1px solid #7a808860;
+            border-bottom: 1px solid #7a808860;
+            border-radius: 2px;
             padding: 10px;
         }
 
     }
 
-    .alert{
+    .alert {
 
         width: 300px;
         height: 35px;
@@ -56,61 +55,62 @@
         margin: 0 auto;
         margin-left: 10px;
         padding: 5px;
-        background-color:$primaryColor;
-        color:$secondaryColor;
+        background-color: $primaryColor;
+        color: $secondaryColor;
         position: relative;
         @include box-shadow;
-       
 
 
-        #message2{
+
+        #message2 {
             display: none;
         }
 
-        .x-icon{
-           font-size: 12px;
+        .x-icon {
+            font-size: 12px;
             position: absolute;
             top: 10%;
             right: 3%;
-            
+
         }
 
-        .x-icon:hover{
+        .x-icon:hover {
             @include tab-close;
         }
 
-        
+
     }
 }
 
 
-.traffic-board{
-    grid-area:traffic-board;
+.traffic-board {
+    grid-area: traffic-board;
     width: max-content;
     margin: 0 auto;
 
-    .traffic-heading{
+    .traffic-heading {
         width: max-content;
         padding: 10px;
 
-    
-        .traffic-list{
+
+        .traffic-list {
             max-width: 400px;
         }
-        .traffic-list ul{
+
+        .traffic-list ul {
             display: flex;
         }
 
-        .traffic-list ul li{
+        .traffic-list ul li {
             list-style: none;
         }
 
     }
 
-    .full-widget-container{
-       @include percent-width;
+    .full-widget-container {
+        @include percent-width;
 
-        #line-chart{
+        #line-chart {
             @include max-width;
         }
     }
@@ -118,129 +118,140 @@
 }
 
 
-.bar-graph{
- padding: 20px;
+.bar-graph {
+    padding: 20px;
 
 
- .bar-widget{
-    @include percent-width;
-    
-    #daily-chart{
-      @include max-width;
+    .bar-widget {
+        @include percent-width;
+
+        #daily-chart {
+            @include max-width;
+        }
     }
 }
-}
 
 
-.doughnut-graph{
+.doughnut-graph {
     margin: 0 auto;
-    padding-top: 10px;
+    padding: 10px;
 
-    .mobile-widget{
+    .mobile-widget {
         position: relative;
         width: 250px;
+        margin: 0 auto;
     }
 }
 
-.social-container{
-   display: flex;
-   flex-direction: column;
-   gap: 15px;
-   padding: 15px;
+.social-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
 
-    .social-divs{
+    .social-divs-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    }
+
+    .social-divs {
         @include flex-align;
         justify-content: space-evenly;
         border: none;
         width: 250px;
         margin: 0 auto;
         padding: 10px;
-        border-radius:1px;
+        border-radius: 1px;
         background-color: #adbdf057;
         box-shadow: 5px 5px 10px;
 
-        .social-svg{
+        .social-svg {
             width: 50px;
             height: 50px;
-        background-color:$primaryColor;
-           border-radius:100% ;
-           padding: 12px;
+            background-color: $primaryColor;
+            border-radius: 100%;
+            padding: 12px;
 
-            }
+        }
 
 
 
     }
 
-    .social-name{
+    .social-name {
         color: #1341d6;
         font-weight: 500;
         font-size: 18px;
         text-transform: capitalize;
     }
 
-    .social-data{
+    .social-data {
         font-weight: 500;
         font-size: 40px;
     }
 }
 
 
-.new-members{
-margin: 1em auto;
-text-align: center;
-line-height: 1.2;
+.new-members {
+    margin: 1em auto;
+    text-align: center;
+    line-height: 1.2;
 
-.members-profile{
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-}
-
-
-.recent-activity{
-margin: 1em auto;
-text-align: center;
-line-height: 1.2;
-padding: 15px;
-
-.members-profile{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    
-}
+    .members-profile {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
 
 }
 
 
-.message-user{
+.recent-activity {
+    margin: 1em auto;
+    text-align: center;
+    line-height: 1.2;
+    padding: 15px;
+
+    .members-profile {
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        .fa-greater-than{
+            display: none;
+        }
+
+    }
+
+}
+
+
+.message-user {
     padding: 15px;
 
 
 }
 
 
-.settings{
+.settings {
     padding: 15px;
     width: 100%;
 
-    .notifications{
+    .notifications {
         @include flex-align;
         flex-direction: column;
         gap: 5px;
         width: max-content;
-       
+
     }
 
-    .settings-notifications{
+    .settings-notifications {
         @include flex-align;
         gap: 15px;
         padding: 5px;
     }
 
-    .white-circle{
-        background-color:$secondaryColor;
+    .white-circle {
+        background-color: $secondaryColor;
         border: 1px solid $neutralColor;
         width: 15px;
         height: 20px;
@@ -249,15 +260,62 @@ padding: 15px;
         top: 10%;
         right: 10%;
         padding: 10px;
+        z-index: 5;
+        transition: all 200ms;
+
+        &:hover {
+            cursor: pointer;
+            @include box-shadow;
+            background-color: #50C4B0;
+        }
+
+        &.change {
+            translate: -40px;
+        }
     }
 
-    .white-circle:hover{
-        cursor: pointer;
-        @include box-shadow;
-        background-color:#50C4B0 ;
+    .toggle-text {
+        position: absolute;
+        top: 5px;
+
+        &--on {
+            left: 3px;
+
+            &.change {
+                opacity: 0;
+            }
+        }
+
+        &--off {
+            right: 3px;
+            transition: all 200ms;
+
+            &.change {
+                opacity: 1;
+            }
+        }
     }
 
-    .time-select{
+    .select-drop:after{
+        content: '\25BC';
+        position: absolute;
+        top: 45%;
+        right: 3%;
+        bottom: 0;
+        font-size: 20px;
+        background: transparent;
+        color: #1341d6;
+        pointer-events: none;
+        height: max-content;
+    }
+    
+    .select-drop{
+        position: relative;
+
+    }
+
+
+    .time-select {
         width: 280px;
         height: 40px;
         padding: 5px;
@@ -270,28 +328,50 @@ padding: 15px;
 
 }
 
-.modal{
+.modal {
     display: none;
     text-align: center;
     z-index: 10;
-padding: 10px;
-position: fixed;
-background-color:#D7D8D0;
-};
+    padding: 10px;
+    position: fixed;
+    background-color: #D7D8D0;
+    animation: slidFromTop 2s linear;
 
-.close-tab{
+}
+
+@keyframes slidFromTop {
+    0% {
+        transform: translateY(-300px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes forward {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.close-tab {
     font-size: 12px;
     position: absolute;
     top: 30%;
     right: 5%;
 }
 
-.close-tab:hover{
+.close-tab:hover {
     @include tab-close;
 }
 
-.green-dot{
-    background-color:#50C4B0;
+.green-dot {
+    background-color: #50C4B0;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -300,51 +380,185 @@ background-color:#D7D8D0;
     border-radius: 100%;
 }
 
-.first-notification{
-  width: 250px;
-top: 112px;
-right: 50px;
+.first-notification {
+    width: 280px;
+    top: 112px;
+    right: 30px;
 
 }
-.second-notification{
-  width: 250px;
-top: 153px;
-right: 50px;
+
+.second-notification {
+    width: 280px;
+    top: 160px;
+    right: 30px;
 
 
 
 
-.green-dot{
-    background-color:#50C4B0;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 40%;
-    left: 5%;
-    border-radius: 100%;
+    .green-dot {
+        background-color: #50C4B0;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 40%;
+        left: 5%;
+        border-radius: 100%;
+    }
+
+    .close-tab {
+        font-size: 12px;
+        position: absolute;
+        top: 30%;
+        right: 5%;
+    }
 }
 
-.close-tab{
-    font-size: 12px;
-    position: absolute;
-    top: 30%;
-    right: 5%;
-}
+.third-notification {
+    width: 300px;
+    top: 210px;
+    right: 20px;
 }
 
-.third-notification{
-  width: 280px;
-top: 195px;
-right: 30px;
-}
-
-.show{
+.show {
     display: block;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
+@media (min-width: 768px){
+    .main-content {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
 
 
+
+    .dash-board-section {
+        .dash-board {
+            &-tab {
+                width: 610px;
+            }
+    
+        }
+    
+        .alert {
+    
+            width: 690px;
+            border-radius: 7px;
+    
+        }
+    }
+
+    .traffic-board {
+        padding: 10px;
+    
+        .traffic-heading {
+
+            .traffic-list ul {
+                margin-left: 110%;
+            }
+    
+        }
+    
+        .full-widget-container {
+            width: 650px;
+            padding-bottom: 15px;
+        }
+    
+    }
+
+
+    .media-query-flex{
+        display: flex;
+    }
+
+    .social-container {
+    .social-divs-container{
+        flex-direction: row;
+        }
+        
+
+        }
+
+
+        .new-members {
+            margin: 0;
+            padding: 10px;
+            .members-profile {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                text-align: start;
+                gap: 20px;
+                padding: 10px;
+
+                .date{
+                    margin-left: 30%;
+                }
+                .date-2{
+                    margin-left: 40%;
+                }
+                .date-3{
+                    margin-left: 38%;
+                }
+                .date-4{
+                    margin-left: 40%;
+                }
+            }
+        
+        }
+
+
+        .recent-activity {
+            margin: 0;
+            padding: 10px;
+        
+            .members-profile {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                text-align: start;
+                gap: 20px;
+                padding: 10px;
+                position: relative;
+
+                .fa-greater-than{
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 95%;
+                }
+        
+            }
+        
+        }
+
+        .settings {
+
+            .select-drop:after{
+                content: '\25BC';
+                position: absolute;
+                top: 45%;
+                right: 2.5%;
+                bottom: 0;
+                font-size: 20px;
+                background: transparent;
+                color: #1341d6;
+                pointer-events: none;
+                height: max-content;
+            }
+
+            .select-drop{
+                position: relative;
+                .time-select {
+                    width: 670px;
+    
+                }
+            }
+
+
+        
+        }
+}

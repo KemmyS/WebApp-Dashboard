@@ -11,6 +11,14 @@
 }
 
 
+@media (min-width: 768px){
+    .grid-container{
+        $grid-size: 50px;
+        grid-template-columns: $grid-size calc(100% - $grid-size);
+        grid-template-rows: $grid-size calc(100% - $grid-size);
+    }
+}
+
 
 
 
