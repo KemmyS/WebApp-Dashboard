@@ -89,3 +89,19 @@
         margin-left: 25px;
     }
 }
+
+@media (min-width: 1024px){
+    .form-button{
+        width: 400px;
+    }
+
+    .setting-button{
+        width: 200px;
+        margin-top: 60px;
+       
+    }
+
+    .cancel-button{
+        margin-left: 25px;
+    }
+}

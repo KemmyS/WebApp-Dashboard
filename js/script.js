@@ -45,6 +45,7 @@ const trafficLineChart = new Chart(lineChart, {
           { x: "8pm", y: 20 },
         ],
         fill: true,
+        
         borderWidth: 1,
       },
     ],

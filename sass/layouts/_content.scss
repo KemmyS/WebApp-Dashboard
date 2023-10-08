@@ -203,6 +203,10 @@
         margin-bottom: 15px;
     }
 
+    h3{
+        margin-left: 30px;
+    }
+
 }
 
 
@@ -226,7 +230,8 @@
 
 
 .message-user {
-    padding: 15px;
+    padding:0 15px;
+    padding-bottom: 10px;
 
 
 }
@@ -561,4 +566,120 @@
 
         
         }
+}
+
+
+
+@media (min-width: 1024px){
+    .dash-board-section {
+        .dash-board {
+            &-tab {
+                width: 860px;
+            }
+    
+        }
+    
+        .alert {
+            width: 950px;
+    
+        }
+    }
+
+    .traffic-board {
+        padding: 10px;
+    
+        .traffic-heading {
+
+            .traffic-list ul {
+                margin-left: 160%;
+            }
+    
+        }
+    
+        .full-widget-container {
+            width: 900px;
+        }
+    
+    }
+
+
+    .media-query-flex{
+        .bar-widget {
+            width: 450px;
+        }
+
+
+    }
+
+    .member-activity-container{
+        display: flex;
+        padding: 5px;
+        .new-members {
+            padding: 0;
+            .members-profile {
+                .date{
+                    margin-left: 0.5%;
+                }
+                .date-2{
+                    margin-left: 15%;
+                }
+                .date-3{
+                    margin-left: 10%;
+                }
+                .date-4{
+                    margin-left: 12%;
+                }
+            }
+        
+        }
+
+        .recent-activity{
+            padding: 0;
+
+            .members-profile {
+                .fa-greater-than{
+                    left: 90%;
+                }
+        
+            }
+        }
+
+
+    }
+        
+
+    .message-settings-container{
+        display: flex;
+        gap: 15px;
+
+        .settings {
+            .select-drop:after{
+                top: 47%;
+                right: 10%;
+                
+            }
+
+            .select-drop{
+                .time-select {
+                    width: 400px;
+    
+                }
+            }
+
+
+        
+        }
+
+        .message-user {
+            padding-left: 30px;
+           
+        
+        
+        }
+
+
+    }
+
+   
+
 }

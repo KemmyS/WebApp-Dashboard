@@ -24,6 +24,13 @@ form{
        background-color: rgba(177, 193, 218, 0.302);
     }
 
+    textarea:hover,
+    input:hover{
+      border: 1px solid rgba(0, 0, 255, 0.556);
+      box-shadow: 0 5px 5px -4px;
+      transition: all 200ms;
+    }
+
    
 
 }
@@ -39,6 +46,22 @@ form{
   
       textarea{
          width: 650px;
+      }
+  
+     
+  
+  }
+
+}
+
+@media (min-width: 1024px){
+   form{
+      input{
+         width: 400px;
+      }
+  
+      textarea{
+         width: 400px;
       }
   
      
