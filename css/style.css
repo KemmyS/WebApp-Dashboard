@@ -14,8 +14,32 @@
     transform: scale(1);
   }
 }
+@keyframes fade-down {
+  0% {
+    translate: 0 -100%;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0%;
+    opacity: 1;
+  }
+}
+@keyframes fade-up {
+  0% {
+    translate: 0 100%;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0%;
+    opacity: 1;
+  }
+}
 .grid-container {
   font-family: "Open Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h3 {
@@ -166,6 +190,36 @@ form input:hover {
   border: 1px solid rgba(0, 0, 255, 0.556);
   box-shadow: 0 5px 5px -4px;
   transition: all 200ms;
+}
+form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+form .form-group .form-error {
+  display: inline-block;
+  color: red;
+  margin-top: 3px;
+  margin-left: 3px;
+  font-size: 13px;
+  width: 100%;
+  height: max-content;
+  display: none;
+}
+
+.fade-down {
+  animation: fade-down 150ms ease-out;
+}
+
+.fade-up {
+  animation: fade-up 150ms ease-out;
+}
+
+.show-error {
+  display: inline-block !important;
+}
+
+.hide-error {
+  display: none !important;
 }
 
 @media (min-width: 768px) {

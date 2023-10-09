@@ -31,8 +31,37 @@ form{
       transition: all 200ms;
     }
 
-   
+    .form-group {
+      display: flex;
+      flex-direction: column;
 
+      .form-error {
+         display: inline-block;
+         color: red;
+         margin-top: 3px;
+         margin-left: 3px;
+         font-size: 13px;
+         width: 100%;
+         height: max-content;
+         display: none;
+       }
+    }
+}
+
+.fade-down {
+   animation: fade-down 150ms ease-out;
+}
+
+.fade-up {
+   animation: fade-up 150ms ease-out;
+}
+
+.show-error {
+   display: inline-block !important;
+}
+
+.hide-error {
+   display: none !important;
 }
 
 
