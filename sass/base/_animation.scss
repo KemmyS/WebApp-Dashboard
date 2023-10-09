@@ -1,2 +1,23 @@
 @use "../utilities/mixins" as *;
 @use "../utilities/variables" as *;
+
+
+@keyframes slidFromTop {
+    0% {
+        transform: translateY(-300px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes forward {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

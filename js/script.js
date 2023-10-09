@@ -1,3 +1,5 @@
+const search = document.getElementById("search");
+
 const lineChart = document.getElementById("line-chart");
 const barChart = document.getElementById("daily-chart");
 const doughnutChart = document.getElementById("doughnut-chart");
@@ -12,9 +14,12 @@ const toggleTextOn = document.querySelectorAll(".toggle-text--on");
 const toggleTextOff = document.querySelectorAll(".toggle-text--off");
 const toggleSwitches = document.querySelectorAll(".white-circle");
 
+const timeSelect = document.querySelector(".time-select");
+
 const SHOW_CLASS = "show";
 const HIDE_CLASS = "hide";
 const CHANGE_CLASS = "change";
+const GREEN_COLOR_CLASS = "color--green";
 
 const modals = document.querySelectorAll(".modal");
 
@@ -23,6 +28,20 @@ const dailyBtn = document.querySelector(".daily-btn");
 const weeklyBtn = document.querySelector(".weekly-btn");
 const monthlyBtn = document.querySelector(".monthly-btn");
 
+
+// added eventListener in the search box
+search.addEventListener("keyup", (e) => {
+  let currentValue = e.target.value.toLowerCase();
+  let searchBoxes = document.querySelectorAll(".members-name");
+
+  searchBoxes.forEach((searchBox) => {
+    if (searchBox.alt.toLowerCase().includes(currentValue)) {
+      searchBox.style.display = "block";
+    } else {
+      searchBox.style.display = "none";
+    }
+  });
+});
 
 // chart Js line graph
 const trafficLineChart = new Chart(lineChart, {
@@ -45,7 +64,7 @@ const trafficLineChart = new Chart(lineChart, {
           { x: "8pm", y: 20 },
         ],
         fill: true,
-        
+
         borderWidth: 1,
       },
     ],
@@ -261,14 +280,74 @@ function modalDisplay(modal){
 // called the modal display function
 modals.forEach((m) => {
   modalDisplay(m)
-})
+});
+
+const EMAIL_KEY = "EMAIL_KEY";
+const PROFILE_KEY = "PROFILE_KEY";
+const STORAGE_KEYS = [EMAIL_KEY, PROFILE_KEY];
+const TIME_ZONE_KEY = "TIME_ZONE_KEY";
+const ACTIVE_CLASS = "active";
+
+function toggleLocalStorage(toggleSwitch, toggleTextOff, toggleTextOn, selectedOption, key) {
+  const timeZoneKey = localStorage.getItem(TIME_ZONE_KEY);
+
+  if (selectedOption && timeZoneKey) {
+    let actualOptionValue;
+    const optionsArray = [...selectedOption.options];
+
+    optionsArray.forEach((option) => {
+      if (timeZoneKey === option.value) {
+        actualOptionValue = option.value;
+      }
+    });
+
+    if (actualOptionValue) {
+      const optionElement = optionsArray.find((option) => option.value === actualOptionValue)
+      optionElement.selected = true;
+    }
+  }
+
+  if(key) {
+    toggleTextOn.classList.remove(SHOW_CLASS);
+    toggleTextOn.classList.add(HIDE_CLASS);
+    toggleTextOn.classList.remove(CHANGE_CLASS);
+
+    toggleTextOff.classList.remove(HIDE_CLASS);
+    toggleTextOff.classList.add(SHOW_CLASS);
+    toggleTextOff.classList.remove(CHANGE_CLASS);
+
+    toggleSwitch.classList.add(CHANGE_CLASS);
+    toggleSwitch.classList.add(GREEN_COLOR_CLASS);
+
+    if (selectedOption && selectedOption instanceof HTMLSelectElement) {
+      selectedOption.classList.add(ACTIVE_CLASS);
+    }
+  } 
+}
+
+timeSelect.addEventListener("click", (e) => {
+  const selectedOption = e.target;
+
+  if (!selectedOption.value.includes("Select")) {
+
+    const key = localStorage.getItem(TIME_ZONE_KEY);
+    if(key) {return;}
+
+    console.log(selectedOption.value);
+    localStorage.setItem(TIME_ZONE_KEY, selectedOption.value);
+  }
+});
 
 // function for the toggle switch to display the on and off selection 
 // and move btn side by side.
-function toggleSwitcher(toggleSwitch, toggleTextOff, toggleTextOn){
+function toggleSwitcher(toggleSwitch, toggleTextOff, toggleTextOn, selectedOption, storageKey){
+  const key = localStorage.getItem(storageKey);
+
+  toggleLocalStorage(toggleSwitch, toggleTextOff, toggleTextOn, selectedOption, key);
+
   toggleSwitch.addEventListener("click", (e) => {
     const clickedButton = e.target;
-  
+
     if (toggleTextOff.classList.contains(HIDE_CLASS)) {
       toggleTextOff.classList.remove(HIDE_CLASS);
       toggleTextOff.classList.add(SHOW_CLASS);
@@ -277,23 +356,61 @@ function toggleSwitcher(toggleSwitch, toggleTextOff, toggleTextOn){
       toggleTextOn.classList.add(SHOW_CLASS);
       toggleTextOn.classList.add(CHANGE_CLASS);
       toggleTextOn.classList.remove(HIDE_CLASS);
-  
+      
       clickedButton.classList.add(CHANGE_CLASS);
+      clickedButton.classList.add(GREEN_COLOR_CLASS);
+
+      if (!key) {
+        localStorage.setItem(storageKey, toggleTextOff.textContent);
+      }
+
     } else {
-      toggleTextOn.classList.remove(HIDE_CLASS);
-      toggleTextOn.classList.add(SHOW_CLASS);
-      toggleTextOn.classList.remove(CHANGE_CLASS);
+        toggleTextOn.classList.remove(HIDE_CLASS);
+        toggleTextOn.classList.add(SHOW_CLASS);
+        toggleTextOn.classList.remove(CHANGE_CLASS);
   
-      toggleTextOff.classList.add(HIDE_CLASS);
-      toggleTextOff.classList.remove(SHOW_CLASS);
-      toggleTextOff.classList.remove(CHANGE_CLASS);
-  
-      clickedButton.classList.remove(CHANGE_CLASS);
+        toggleTextOff.classList.add(HIDE_CLASS);
+        toggleTextOff.classList.remove(SHOW_CLASS);
+        toggleTextOff.classList.remove(CHANGE_CLASS);
+    
+        clickedButton.classList.remove(CHANGE_CLASS);
+        clickedButton.classList.remove(GREEN_COLOR_CLASS);
     }
   });
 }
 
 // called the toggle Switcher function
 for(let i =0; i < 2; i++) {
-  toggleSwitcher(toggleSwitches[i], toggleTextOff[i], toggleTextOn[i]);
+  toggleSwitcher(toggleSwitches[i], toggleTextOff[i], toggleTextOn[i], timeSelect, STORAGE_KEYS[i]);
 }
+
+//For select, find the currently selected option and add it to localStorage
+//Then place the selected attr on it.
+
+function toggleSwitcherReset(toggleSwitch, toggleTextOff, toggleTextOn){
+  toggleTextOn.classList.remove(HIDE_CLASS);
+  toggleTextOn.classList.add(SHOW_CLASS);
+  toggleTextOn.classList.remove(CHANGE_CLASS);
+
+  toggleTextOff.classList.add(HIDE_CLASS);
+  toggleTextOff.classList.remove(SHOW_CLASS);
+  toggleTextOff.classList.remove(CHANGE_CLASS);
+
+  toggleSwitch.classList.remove(CHANGE_CLASS);
+  toggleSwitch.classList.remove(GREEN_COLOR_CLASS);
+}
+
+const cancelButton = document.querySelector(".cancel-button");
+
+cancelButton.addEventListener("click", () => {
+  localStorage.removeItem(EMAIL_KEY);
+  localStorage.removeItem(PROFILE_KEY);
+  localStorage.removeItem(TIME_ZONE_KEY);
+
+  timeSelect.parentElement.reset();
+
+  for (let i =0; i < 2; i++) {
+    toggleSwitcherReset(toggleSwitches[i], toggleTextOff[i], toggleTextOn[i]);
+  }
+});
+

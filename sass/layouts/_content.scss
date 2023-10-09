@@ -43,6 +43,21 @@
             border-bottom: 1px solid #7a808860;
             border-radius: 2px;
             padding: 10px;
+
+            #search {
+                display: block;
+                width: 200px;
+                padding: 5px;
+                border-radius: 2px;
+                border: none;
+            }
+
+
+            #search:hover {
+                border: 0px solid rgba(0, 0, 255, 0.556);
+                box-shadow: 0 5px 5px -4px;
+                transition: all 200ms;
+            }
         }
 
     }
@@ -148,11 +163,11 @@
     flex-direction: column;
     padding: 15px;
 
-    .social-divs-container{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    .social-divs-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
     }
 
     .social-divs {
@@ -203,7 +218,7 @@
         margin-bottom: 15px;
     }
 
-    h3{
+    h3 {
         margin-left: 30px;
     }
 
@@ -220,7 +235,7 @@
         margin-top: 15px;
         margin-bottom: 15px;
 
-        .fa-greater-than{
+        .fa-greater-than {
             display: none;
         }
 
@@ -230,7 +245,7 @@
 
 
 .message-user {
-    padding:0 15px;
+    padding: 0 15px;
     padding-bottom: 10px;
 
 
@@ -301,25 +316,6 @@
         }
     }
 
-    .select-drop:after{
-        content: '\25BC';
-        position: absolute;
-        top: 45%;
-        right: 3%;
-        bottom: 0;
-        font-size: 20px;
-        background: transparent;
-        color: #1341d6;
-        pointer-events: none;
-        height: max-content;
-    }
-    
-    .select-drop{
-        position: relative;
-
-    }
-
-
     .time-select {
         width: 280px;
         height: 40px;
@@ -344,26 +340,6 @@
 
 }
 
-@keyframes slidFromTop {
-    0% {
-        transform: translateY(-300px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes forward {
-    0% {
-        transform: scale(0.5);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
 .close-tab {
     font-size: 12px;
     position: absolute;
@@ -385,6 +361,10 @@
     border-radius: 100%;
 }
 
+.color--green {
+    background-color: #50C4B0 !important;
+}
+
 .first-notification {
     width: 280px;
     top: 112px;
@@ -396,9 +376,6 @@
     width: 280px;
     top: 160px;
     right: 30px;
-
-
-
 
     .green-dot {
         background-color: #50C4B0;
@@ -432,178 +409,176 @@
     display: none;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .main-content {
         grid-row: 2 / 3;
         grid-column: 2 / 3;
     }
 
-
-
     .dash-board-section {
         .dash-board {
             &-tab {
                 width: 610px;
+
+                #search {
+                    margin-left: auto;
+                    width: 500px;
+                    
+                }
             }
-    
+
         }
-    
+
         .alert {
-    
+
             width: 690px;
             border-radius: 7px;
-    
+
         }
     }
 
     .traffic-board {
         padding: 10px;
-    
+
         .traffic-heading {
 
             .traffic-list ul {
                 margin-left: 110%;
             }
-    
+
         }
-    
+
         .full-widget-container {
             width: 650px;
             padding-bottom: 15px;
         }
-    
+
     }
 
 
-    .media-query-flex{
+    .media-query-flex {
         display: flex;
     }
 
     .social-container {
-    .social-divs-container{
-        flex-direction: row;
-        }
-        
-
+        .social-divs-container {
+            flex-direction: row;
         }
 
 
-        .new-members {
-            margin: 0;
+    }
+
+
+    .new-members {
+        margin: 0;
+        padding: 10px;
+
+        .members-profile {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: start;
+            gap: 20px;
             padding: 10px;
-            .members-profile {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                text-align: start;
-                gap: 20px;
-                padding: 10px;
 
-                .date{
-                    margin-left: 30%;
-                }
-                .date-2{
-                    margin-left: 40%;
-                }
-                .date-3{
-                    margin-left: 38%;
-                }
-                .date-4{
-                    margin-left: 40%;
-                }
+            .date {
+                margin-left: 30%;
             }
-        
+
+            .date-2 {
+                margin-left: 40%;
+            }
+
+            .date-3 {
+                margin-left: 38%;
+            }
+
+            .date-4 {
+                margin-left: 40%;
+            }
         }
 
+    }
 
-        .recent-activity {
-            margin: 0;
+
+    .recent-activity {
+        margin: 0;
+        padding: 10px;
+
+        .members-profile {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: start;
+            gap: 20px;
             padding: 10px;
-        
-            .members-profile {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                text-align: start;
-                gap: 20px;
-                padding: 10px;
-                position: relative;
+            position: relative;
 
-                .fa-greater-than{
-                    display: block;
-                    position: absolute;
-                    top: 50%;
-                    left: 95%;
-                }
-        
-            }
-        
-        }
-
-        .settings {
-
-            .select-drop:after{
-                content: '\25BC';
+            .fa-greater-than {
+                display: block;
                 position: absolute;
-                top: 45%;
-                right: 2.5%;
-                bottom: 0;
-                font-size: 20px;
-                background: transparent;
-                color: #1341d6;
-                pointer-events: none;
-                height: max-content;
+                top: 50%;
+                left: 95%;
             }
 
-            .select-drop{
-                position: relative;
-                .time-select {
-                    width: 670px;
-    
-                }
-            }
-
-
-        
         }
+
+    }
+
+    .settings {
+
+        .select-drop {
+            position: relative;
+
+            .time-select {
+                width: 670px;
+
+            }
+        }
+
+
+
+    }
 }
 
-
-
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     .dash-board-section {
         .dash-board {
             &-tab {
                 width: 860px;
+
+                #search {
+                    width: 600px;
+                }
             }
-    
+
         }
-    
+
         .alert {
             width: 950px;
-    
+
         }
     }
 
     .traffic-board {
         padding: 10px;
-    
+
         .traffic-heading {
 
             .traffic-list ul {
                 margin-left: 160%;
             }
-    
+
         }
-    
+
         .full-widget-container {
             width: 900px;
         }
-    
+
     }
 
 
-    .media-query-flex{
+    .media-query-flex {
         .bar-widget {
             width: 450px;
         }
@@ -611,75 +586,62 @@
 
     }
 
-    .member-activity-container{
+    .member-activity-container {
         display: flex;
         padding: 5px;
+
         .new-members {
             padding: 0;
+
             .members-profile {
-                .date{
+                .date {
                     margin-left: 0.5%;
                 }
-                .date-2{
+
+                .date-2 {
                     margin-left: 15%;
                 }
-                .date-3{
+
+                .date-3 {
                     margin-left: 10%;
                 }
-                .date-4{
+
+                .date-4 {
                     margin-left: 12%;
                 }
             }
-        
+
         }
 
-        .recent-activity{
+        .recent-activity {
             padding: 0;
 
             .members-profile {
-                .fa-greater-than{
+                .fa-greater-than {
                     left: 90%;
                 }
-        
+
             }
         }
 
 
     }
-        
 
-    .message-settings-container{
+
+    .message-settings-container {
         display: flex;
         gap: 15px;
 
         .settings {
-            .select-drop:after{
-                top: 27px;
-                right: 47px;
-                
-            }
-
-            .select-drop{
+            .select-drop {
                 .time-select {
                     width: 400px;
-    
                 }
             }
-
-
-        
         }
 
         .message-user {
             padding-left: 30px;
-           
-        
-        
         }
-
-
     }
-
-   
-
 }

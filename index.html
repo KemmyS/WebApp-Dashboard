@@ -103,7 +103,14 @@
 
             <div class="dash-board">
                 <h2 class="dash-board-heading">Dashboard</h2>
-                <div class="dash-board-tab"></div>
+                <div class="dash-board-tab">
+                    <input type="search" 
+                    name="search" 
+                    id="search" 
+                    placeholder="search"
+                    autocomplete="on">
+                    
+                </div>
             </div>
 
             <div class="alert" id="alert">
@@ -406,10 +413,9 @@
 
             </div>
 
-            <div class="select-drop">
-                <label for="timezone"></label>
+            <form class="select-drop" novalidate>
             <select class="time-select" id="timezone">
-                <option disabled selected>Select a Timezone</option>
+                <option>Select a Timezone</option>
                 <option>Eastern</option>
                 <option>Central</option>
                 <option>Mountain</option>
@@ -419,7 +425,7 @@
                 <option>Samoa</option>
                 <option>Chamorro</option>
             </select>
-            </div>
+            </form>
 
             <div class="settings-btns">
                 <button class="setting-button save-button" id="save">Save</button>

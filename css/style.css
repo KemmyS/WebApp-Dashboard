@@ -1,4 +1,19 @@
-@charset "UTF-8";
+@keyframes slidFromTop {
+  0% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes forward {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .grid-container {
   font-family: "Open Sans", sans-serif;
 }
@@ -220,6 +235,18 @@ form input:hover {
   border-radius: 2px;
   padding: 10px;
 }
+.dash-board-section .dash-board-tab #search {
+  display: block;
+  width: 200px;
+  padding: 5px;
+  border-radius: 2px;
+  border: none;
+}
+.dash-board-section .dash-board-tab #search:hover {
+  border: 0px solid rgba(0, 0, 255, 0.556);
+  box-shadow: 0 5px 5px -4px;
+  transition: all 200ms;
+}
 .dash-board-section .alert {
   width: 300px;
   height: 35px;
@@ -430,21 +457,6 @@ form input:hover {
 .settings .toggle-text--off.change {
   opacity: 1;
 }
-.settings .select-drop:after {
-  content: "▼";
-  position: absolute;
-  top: 45%;
-  right: 3%;
-  bottom: 0;
-  font-size: 20px;
-  background: transparent;
-  color: #1341d6;
-  pointer-events: none;
-  height: max-content;
-}
-.settings .select-drop {
-  position: relative;
-}
 .settings .time-select {
   width: 280px;
   height: 40px;
@@ -465,22 +477,6 @@ form input:hover {
   animation: slidFromTop 2s linear;
 }
 
-@keyframes slidFromTop {
-  0% {
-    transform: translateY(-300px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@keyframes forward {
-  0% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .close-tab {
   font-size: 12px;
   position: absolute;
@@ -504,6 +500,10 @@ form input:hover {
   top: 40%;
   left: 5%;
   border-radius: 100%;
+}
+
+.color--green {
+  background-color: #50C4B0 !important;
 }
 
 .first-notification {
@@ -554,6 +554,10 @@ form input:hover {
   }
   .dash-board-section .dash-board-tab {
     width: 610px;
+  }
+  .dash-board-section .dash-board-tab #search {
+    margin-left: auto;
+    width: 500px;
   }
   .dash-board-section .alert {
     width: 690px;
@@ -618,18 +622,6 @@ form input:hover {
     top: 50%;
     left: 95%;
   }
-  .settings .select-drop:after {
-    content: "▼";
-    position: absolute;
-    top: 45%;
-    right: 2.5%;
-    bottom: 0;
-    font-size: 20px;
-    background: transparent;
-    color: #1341d6;
-    pointer-events: none;
-    height: max-content;
-  }
   .settings .select-drop {
     position: relative;
   }
@@ -640,6 +632,9 @@ form input:hover {
 @media (min-width: 1024px) {
   .dash-board-section .dash-board-tab {
     width: 860px;
+  }
+  .dash-board-section .dash-board-tab #search {
+    width: 600px;
   }
   .dash-board-section .alert {
     width: 950px;
@@ -685,10 +680,6 @@ form input:hover {
     display: flex;
     gap: 15px;
   }
-  .message-settings-container .settings .select-drop:after {
-    top: 27px;
-    right: 47px;
-  }
   .message-settings-container .settings .select-drop .time-select {
     width: 400px;
   }
@@ -697,7 +688,6 @@ form input:hover {
   }
 }
 .grid-container {
-  background-color: rgba(255, 0, 0, 0.331);
   margin: 0 auto;
   max-width: 1024px;
   min-height: 100vh;
