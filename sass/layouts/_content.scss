@@ -589,7 +589,8 @@
 
     .member-activity-container {
         display: flex;
-        padding: 5px;
+        // padding: 5px;
+        // margin: 0 auto;
 
         .new-members {
             padding: 0;
@@ -631,8 +632,7 @@
 
     .message-settings-container {
         display: flex;
-        gap: 15px;
-
+        margin-left: 27px;
         .settings {
             .select-drop {
                 .time-select {
@@ -640,9 +640,6 @@
                 }
             }
         }
-
-        .message-user {
-            padding-left: 30px;
-        }
     }
+
 }
