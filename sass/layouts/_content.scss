@@ -589,8 +589,7 @@
 
     .member-activity-container {
         display: flex;
-        // padding: 5px;
-        // margin: 0 auto;
+        padding-top: 10px;
 
         .new-members {
             padding: 0;
@@ -639,6 +638,10 @@
                     width: 400px;
                 }
             }
+        }
+
+        .message-user{
+            padding-top: 15px;
         }
     }
 

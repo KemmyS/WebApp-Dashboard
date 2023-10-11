@@ -1,16 +1,16 @@
+import { 
+    SHOW_CLASS, 
+    HIDE_CLASS,
+    FADE_IN_CLASS,
+    FADE_OUT_CLASS 
+} from "./constants.js";
+
+const FADE_TIMER = 300;
+
 const search = document.getElementById("search");
 
-const SHOW_CLASS = "show";
-const HIDE_CLASS = "hide";
-const FADE_IN_CLASS = "fade-in";
-const FADE_OUT_CLASS = "fade-out";
-
-const FADE_TIMER = 400;
-
-// added eventListener in the search box
 search.addEventListener("keyup", (e) => {
     const currentValue = e.target.value.toLowerCase();
-
     const memberProfiles = document.querySelectorAll(".members-profile");
   
     memberProfiles.forEach((memberProfile) => {

@@ -1,10 +1,7 @@
-"use strict";
-
-const SHOW_ERROR_CLASS = "show-error";
-const HIDE_ERROR_CLASS = "hide-error";
-
-const FADE_DOWN_CLASS = "fade-down";
-const FADE_UP_CLASS = "fade-up";
+import { 
+    FADE_DOWN_CLASS, 
+    SHOW_ERROR_CLASS,
+} from "./constants.js";
 
 const form = document.querySelector(".message-form");
 

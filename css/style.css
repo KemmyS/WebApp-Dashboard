@@ -736,6 +736,7 @@ form .form-group .form-error {
   }
   .member-activity-container {
     display: flex;
+    padding-top: 10px;
   }
   .member-activity-container .new-members {
     padding: 0;
@@ -764,6 +765,9 @@ form .form-group .form-error {
   }
   .message-settings-container .settings .select-drop .time-select {
     width: 400px;
+  }
+  .message-settings-container .message-user {
+    padding-top: 15px;
   }
 }
 .grid-container {
