@@ -216,6 +216,7 @@
     .members-profile {
         margin-top: 15px;
         margin-bottom: 15px;
+        transition: all 200ms;
     }
 
     h3 {
@@ -402,11 +403,11 @@
 }
 
 .show {
-    display: block;
+    display: block !important;
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 @media (min-width: 768px) {

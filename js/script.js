@@ -1,4 +1,4 @@
-const search = document.getElementById("search");
+
 
 const lineChart = document.getElementById("line-chart");
 const barChart = document.getElementById("daily-chart");
@@ -29,19 +29,7 @@ const weeklyBtn = document.querySelector(".weekly-btn");
 const monthlyBtn = document.querySelector(".monthly-btn");
 
 
-// added eventListener in the search box
-search.addEventListener("keyup", (e) => {
-  let currentValue = e.target.value.toLowerCase();
-  let searchBoxes = document.querySelectorAll(".members-name");
 
-  searchBoxes.forEach((searchBox) => {
-    if (searchBox.alt.toLowerCase().includes(currentValue)) {
-      searchBox.style.display = "block";
-    } else {
-      searchBox.style.display = "none";
-    }
-  });
-});
 
 // chart Js line graph
 const trafficLineChart = new Chart(lineChart, {
