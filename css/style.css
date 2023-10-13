@@ -284,6 +284,7 @@ form .form-group .form-error {
 }
 
 .main-content {
+  border-right: 1px solid gray;
   grid-area: main-content;
   display: grid;
   grid-template-columns: 100%;
