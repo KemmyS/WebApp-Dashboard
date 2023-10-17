@@ -163,28 +163,15 @@ const saveButton = document.querySelector(".save-button");
 saveButton.addEventListener("click", (e) => {
   const emailValue = circleTextContent(emailBtn);
   if (emailValue) {
-    if (!getLocalStorage(EMAIL_KEY)) {
-      setLocalStorage(EMAIL_KEY, emailValue);
-    } else {
-      setLocalStorage(EMAIL_KEY, emailValue);
-    }
+    setLocalStorage(EMAIL_KEY, emailValue);
   }
 
   const profileValue = circleTextContent(profileBtn);
   if (profileValue) {
-    if (!getLocalStorage(PROFILE_KEY)) {
-      setLocalStorage(PROFILE_KEY, profileValue);
-    } else {
-      setLocalStorage(PROFILE_KEY, profileValue);
-    }
+    setLocalStorage(PROFILE_KEY, profileValue);
   }
 
-  const lastTimezone = timeZoneValue;
-  if (lastTimezone) {
-    if (!getLocalStorage(TIME_ZONE_KEY)) {
-      setLocalStorage(TIME_ZONE_KEY, lastTimezone);
-    } else {
-      setLocalStorage(TIME_ZONE_KEY, lastTimezone);
-    }
+  if (timeZoneValue) {
+    setLocalStorage(TIME_ZONE_KEY, timeZoneValue);
   }
 });
